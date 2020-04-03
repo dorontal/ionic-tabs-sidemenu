@@ -5,40 +5,40 @@ const TAB_PAGES: any[] = [
         title: 'Tab 1',
         tab: 'tab1',
         icon: 'search',
-        showInSidemenu: true,
-        showInTabbar: false,
+        inSidemenu: true,
+        inTabbar: false,
         showTabbar: false
     },
     {
         title: 'Tab 2',
         tab: 'tab2',
         icon: 'information-circle',
-        showInSidemenu: true,
-        showInTabbar: false,
+        inSidemenu: true,
+        inTabbar: false,
         showTabbar: false
     },
     {
         title: 'Tab 3',
         tab: 'tab3',
         icon: 'triangle',
-        showInSidemenu: false,
-        showInTabbar: true,
+        inSidemenu: false,
+        inTabbar: true,
         showTabbar: true
     },
     {
         title: 'Tab 4',
         tab: 'tab4',
         icon: 'square',
-        showInSidemenu: false,
-        showInTabbar: true,
+        inSidemenu: false,
+        inTabbar: true,
         showTabbar: true
     },
     {
         title: 'Tab 5',
         tab: 'tab5',
         icon: 'ellipse',
-        showInSidemenu: false,
-        showInTabbar: true,
+        inSidemenu: false,
+        inTabbar: true,
         showTabbar: true
     }
 ];
@@ -54,5 +54,5 @@ export const APP_PAGES: any[] = TAB_PAGES.map((page: any) => {
     styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-    public readonly tabPages: any = TAB_PAGES.filter(page => page.showInTabbar);
+    public readonly tabPages: any = TAB_PAGES.filter(page => page.inTabbar);
 }

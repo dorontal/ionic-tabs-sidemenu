@@ -8,5 +8,5 @@ import { APP_PAGES } from './pages/tabs/tabs.page';
     styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-    public appPages: any[] = APP_PAGES.filter(page => page.showInSidemenu);
+    public appPages: any[] = APP_PAGES.filter(page => page.inSidemenu);
 }

@@ -6,35 +6,40 @@ const TAB_PAGES: any[] = [
         tab: 'tab1',
         icon: 'search',
         showInSidemenu: true,
-        showInTabbar: false
+        showInTabbar: false,
+        showTabbar: false
     },
     {
         title: 'Tab 2',
         tab: 'tab2',
         icon: 'information-circle',
         showInSidemenu: true,
-        showInTabbar: false
+        showInTabbar: false,
+        showTabbar: false
     },
     {
         title: 'Tab 3',
         tab: 'tab3',
         icon: 'triangle',
         showInSidemenu: false,
-        showInTabbar: true
+        showInTabbar: true,
+        showTabbar: true
     },
     {
         title: 'Tab 4',
         tab: 'tab4',
         icon: 'square',
         showInSidemenu: false,
-        showInTabbar: true
+        showInTabbar: true,
+        showTabbar: true
     },
     {
         title: 'Tab 5',
         tab: 'tab5',
         icon: 'ellipse',
         showInSidemenu: false,
-        showInTabbar: true
+        showInTabbar: true,
+        showTabbar: true
     }
 ];
 export const TABS_ROOT: string = 'app';

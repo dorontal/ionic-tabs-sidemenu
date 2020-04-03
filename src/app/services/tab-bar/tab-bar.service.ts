@@ -42,9 +42,14 @@ export class TabBarService {
     }
 
     private setTabVisibility(event: RouterEvent) {
-        const lastUrlPart: string = /.*\/([^?]+)/.exec(event.url)[1];
-        if (this.tabBarTabs.has(lastUrlPart)) {
-            this.showTabBar();
+        const execResult: any = /.*\/([^?]+)/.exec(event.url);
+        if (execResult) {
+            const lastUrlPart: string = execResult[1];            
+            if (this.tabBarTabs.has(lastUrlPart)) {
+                this.showTabBar();
+            } else {
+                this.hideTabBar();
+            }
         } else {
             this.hideTabBar();
         }

@@ -55,9 +55,6 @@ export class TabBarService {
         } else {
             this.hideTabBar();
         }
-
-
-
     }
 
 }

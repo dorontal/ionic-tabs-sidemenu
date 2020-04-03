@@ -59,10 +59,13 @@ export class TabsPage {
     public readonly tabPages: any =
         TAB_PAGES.filter((page: any) => page.inTabBar);
 
-    @ViewChild('tabbar', {read: ElementRef, static: false})
+    @ViewChild('tabBar', {read: ElementRef, static: false})
     private tabBarRef: ElementRef;
 
-    constructor(private tabBarService: TabBarService) {
+    constructor(private tabBarService: TabBarService) {}
+
+    public ngAfterViewInit() {
+        console.log('tabBarRef', this.tabBarRef);
         const tabBarTabs: Set<string> =
            new Set<string>(this.tabPages.map((page: any) => page.tab));
         this.tabBarService.init(this.tabBarRef, tabBarTabs);

@@ -1,8 +1,8 @@
 {
-  "name": "asdt",
+  "name": "ionic-tabs-sidemenu",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Doron Tal",
+  "homepage": "https://tracktunes.org/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -51,5 +51,5 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project"
+  "description": "A skeleton app using tabs and sidemenu together"
 }

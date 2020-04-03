@@ -64,8 +64,7 @@ export class TabsPage {
 
     constructor(private tabBarService: TabBarService) {}
 
-    public ngAfterViewInit() {
-        console.log('tabBarRef', this.tabBarRef);
+    public ngAfterViewInit(): void {
         const tabBarTabs: Set<string> =
            new Set<string>(this.tabPages.map((page: any) => page.tab));
         this.tabBarService.init(this.tabBarRef, tabBarTabs);

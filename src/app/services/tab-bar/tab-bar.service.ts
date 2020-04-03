@@ -1,7 +1,6 @@
 import { filter } from 'rxjs/operators';
 import { ElementRef, Injectable } from '@angular/core';
 import { NavigationEnd, Router, RouterEvent } from '@angular/router';
-import { Platform } from '@ionic/angular';
 
 // Adapted from https://medium.com/@JordanBenge/..
 //   ..ionic-4-hiding-showing-tabs-on-certain-pages-31cf2380a5db
@@ -13,22 +12,16 @@ export class TabBarService {
     private tabBarRef: ElementRef;
     private tabBarTabs: Set<string>;
 
-    constructor(
-        private router: Router,
-        private platform: Platform
-    ) {
-        this.platform.ready().then(() => {
-            // subscription to catch the page we're navigating to
-            this.router.events.pipe(
-                filter((event: RouterEvent) => event instanceof NavigationEnd)
-            ).subscribe((event: RouterEvent) => {
-                this.setTabVisibility(event);
-            });
+    constructor(private router: Router) {
+        this.router.events.pipe(
+            filter((event: RouterEvent) => event instanceof NavigationEnd)
+        ).subscribe((event: RouterEvent) => {
+            console.log(event);
+            this.setTabVisibility(event);
         });
     }
 
     public init(tabBarRef: ElementRef, tabBarTabs: Set<string>): void {
-        console.log('setting ', tabBarRef);
         this.tabBarRef = tabBarRef;
         this.tabBarTabs = tabBarTabs;
     }
@@ -56,5 +49,4 @@ export class TabBarService {
             this.hideTabBar();
         }
     }
-
 }

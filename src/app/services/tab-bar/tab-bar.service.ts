@@ -4,6 +4,7 @@ import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 
 // Adapted from https://medium.com/@JordanBenge/..
 //   ..ionic-4-hiding-showing-tabs-on-certain-pages-31cf2380a5db
+// (with many improvements -DT)
 
 @Injectable({
     providedIn: 'root'
@@ -16,7 +17,6 @@ export class TabBarService {
         this.router.events.pipe(
             filter((event: RouterEvent) => event instanceof NavigationEnd)
         ).subscribe((event: RouterEvent) => {
-            console.log(event);
             this.setTabVisibility(event);
         });
     }

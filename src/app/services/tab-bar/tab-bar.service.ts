@@ -28,7 +28,7 @@ export class TabBarService {
 
     public hideTabBar(): void {
         const display: string = this.tabBarRef.nativeElement.style.display;
-        if (display != 'none') {
+        if (display !== 'none') {
             this.tabBarRef.nativeElement.style.display = 'none';
         }
     }
@@ -36,7 +36,7 @@ export class TabBarService {
     public showTabBar(): void {
         const display: string =
             this.tabBarRef.nativeElement.style.display;
-        if (display != 'flex') {
+        if (display !== 'flex') {
             this.tabBarRef.nativeElement.style.display = 'flex';
         }
     }
@@ -44,7 +44,7 @@ export class TabBarService {
     private setTabVisibility(event: RouterEvent) {
         const execResult: any = /.*\/([^?]+)/.exec(event.url);
         if (execResult) {
-            const lastUrlPart: string = execResult[1];            
+            const lastUrlPart: string = execResult[1];
             if (this.tabBarTabs.has(lastUrlPart)) {
                 this.showTabBar();
             } else {

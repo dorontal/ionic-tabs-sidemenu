@@ -39,11 +39,8 @@ const TAB_PAGES: any[] = [
 ];
 export const TABS_ROOT: string = 'app';
 export const APP_PAGES: any[] = TAB_PAGES.map((page: any) => {
-    return {
-        title: page.title,
-        icon: page.icon,
-        url: '/' + TABS_ROOT + '/' + page.tab
-    };
+    page.url = '/' + TABS_ROOT + '/' + page.tab;
+    return page;
 });
 
 @Component({
@@ -52,5 +49,5 @@ export const APP_PAGES: any[] = TAB_PAGES.map((page: any) => {
     styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-    public readonly tabPages: any = TAB_PAGES;
+    public readonly tabPages: any = TAB_PAGES.filter(page => page.showInTabbar);
 }

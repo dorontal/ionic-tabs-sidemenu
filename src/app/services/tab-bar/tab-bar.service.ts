@@ -11,6 +11,7 @@ import { Platform } from '@ionic/angular';
 })
 export class TabBarService {
     private tabBarRef: ElementRef;
+    private tabBarTabs: Set<string>;
 
     constructor(
         private router: Router,
@@ -26,19 +27,20 @@ export class TabBarService {
         });
     }
 
-    public init(tabBarRef: ElementRef): void {
+    public init(tabBarRef: ElementRef, tabBarTabs: Set<string>): void {
         console.log('setting ', tabBarRef);
         this.tabBarRef = tabBarRef;
+        this.tabBarTabs = tabBarTabs;
     }
 
-    public hide(): void {
+    public hideTabBar(): void {
         const display: string = this.tabBarRef.nativeElement.style.display;
         if (display != 'none') {
             this.tabBarRef.nativeElement.style.display = 'none';
         }
     }
 
-    public show(): void {
+    public showTabBar(): void {
         const display: string =
             this.tabBarRef.nativeElement.style.display;
         if (display != 'flex') {
@@ -47,7 +49,13 @@ export class TabBarService {
     }
 
     private setTabVisibility(event: RouterEvent) {
-        const lastUrlPart: string = /.*\/([^?]+)/.exec(event.url);
+        const lastUrlPart: string = /.*\/([^?]+)/.exec(event.url)[1];
+        if (this.tabBarTabs.has(lastUrlPart)) {
+            this.showTabBar();
+        } else {
+            this.hideTabBar();
+        }
+
 
 
     }

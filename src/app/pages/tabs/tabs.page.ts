@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+
+import { TabBarService } from  '../../services/tab-bar/tab-bar.service';
 
 const TAB_PAGES: any[] = [
     {
@@ -6,40 +8,40 @@ const TAB_PAGES: any[] = [
         tab: 'tab1',
         icon: 'search',
         inSidemenu: true,
-        inTabbar: false,
-        showTabbar: false
+        inTabBar: false,
+        showTabBar: false
     },
     {
         title: 'Tab 2',
         tab: 'tab2',
         icon: 'information-circle',
         inSidemenu: true,
-        inTabbar: false,
-        showTabbar: false
+        inTabBar: false,
+        showTabBar: false
     },
     {
         title: 'Tab 3',
         tab: 'tab3',
         icon: 'triangle',
         inSidemenu: false,
-        inTabbar: true,
-        showTabbar: true
+        inTabBar: true,
+        showTabBar: true
     },
     {
         title: 'Tab 4',
         tab: 'tab4',
         icon: 'square',
         inSidemenu: false,
-        inTabbar: true,
-        showTabbar: true
+        inTabBar: true,
+        showTabBar: true
     },
     {
         title: 'Tab 5',
         tab: 'tab5',
         icon: 'ellipse',
         inSidemenu: false,
-        inTabbar: true,
-        showTabbar: true
+        inTabBar: true,
+        showTabBar: true
     }
 ];
 export const TABS_ROOT: string = 'app';
@@ -54,5 +56,15 @@ export const APP_PAGES: any[] = TAB_PAGES.map((page: any) => {
     styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-    public readonly tabPages: any = TAB_PAGES.filter(page => page.inTabbar);
+    public readonly tabPages: any =
+        TAB_PAGES.filter((page: any) => page.inTabBar);
+
+    @ViewChild('tabbar', {read: ElementRef, static: false})
+    private tabBarRef: ElementRef;
+
+    constructor(private tabBarService: TabBarService) {
+        const tabBarTabs: Set<string> =
+           new Set<string>(this.tabPages.map((page: any) => page.tab));
+        this.tabBarService.init(this.tabBarRef, tabBarTabs);
+    }
 }

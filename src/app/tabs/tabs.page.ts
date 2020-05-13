@@ -17,7 +17,7 @@ const TAB_PAGES: any[] = [
         icon: 'information-circle',
         inSidemenu: true,
         inTabBar: false,
-        showTabBar: false
+        showTabBar: true
     },
     {
         title: 'Tab 3',
@@ -41,7 +41,7 @@ const TAB_PAGES: any[] = [
         icon: 'ellipse',
         inSidemenu: false,
         inTabBar: true,
-        showTabBar: true
+        showTabBar: false
     }
 ];
 export const TABS_ROOT: string = 'tabs';
@@ -58,15 +58,16 @@ export const APP_PAGES: any[] = TAB_PAGES.map((page: any) => {
 export class TabsPage {
     public readonly tabPages: any =
         TAB_PAGES.filter((page: any) => page.inTabBar);
-
+    
     @ViewChild('tabBar', {read: ElementRef, static: false})
     private tabBarRef: ElementRef;
 
     constructor(private tabBarService: TabBarService) {}
 
     public ngAfterViewInit(): void {
-        const tabBarTabs: Set<string> =
-           new Set<string>(this.tabPages.map((page: any) => page.tab));
-        this.tabBarService.init(this.tabBarRef, tabBarTabs);
+        const pagesWithTabBar: Set<string> = new Set<string>(
+            TAB_PAGES.filter((page: any) => page.showTabBar)
+                .map((page: any) => page.tab));
+        this.tabBarService.init(this.tabBarRef, pagesWithTabBar);
     }
 }

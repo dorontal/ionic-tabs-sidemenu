@@ -3,7 +3,7 @@ Ionic skeleton app with both tabs and sidemenu.
 
 This app can:
 * Hide or show the tab-bar for any of its  pages
-* Can put or omit any of its pages in the side menu, or in the tab-bar
+* Include or omit any of its pages in the side menu, or in the tab-bar
 
 Those things are done via the service [src/app/tab-bar.service.ts](src/app/tab-bar.service.ts).
 

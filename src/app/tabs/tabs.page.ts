@@ -44,6 +44,12 @@ const TAB_PAGES: any[] = [
         showTabBar: false
     }
 ];
+
+/*
+ * TABS_ROOT is the root path of all pages, e.g, if you set this
+ * to 'app' then all pages start with the path 'app' as in:
+ * http://localhost:8100/app/tab1.
+ */
 export const TABS_ROOT: string = 'tabs';
 export const APP_PAGES: any[] = TAB_PAGES.map((page: any) => {
     page.url = '/' + TABS_ROOT + '/' + page.tab;

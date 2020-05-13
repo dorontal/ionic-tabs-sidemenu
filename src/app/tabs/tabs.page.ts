@@ -46,7 +46,7 @@ const TAB_PAGES: any[] = [
 ];
 export const TABS_ROOT: string = 'tabs';
 export const APP_PAGES: any[] = TAB_PAGES.map((page: any) => {
-    page.url = TABS_ROOT + '/' + page.tab;
+    page.url = '/' + TABS_ROOT + '/' + page.tab;
     return page;
 });
 
@@ -56,7 +56,7 @@ export const APP_PAGES: any[] = TAB_PAGES.map((page: any) => {
     styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-    public readonly tabPages: any =
+    public readonly tabBarPages: any =
         TAB_PAGES.filter((page: any) => page.inTabBar);
     
     @ViewChild('tabBar', {read: ElementRef, static: false})
@@ -65,9 +65,9 @@ export class TabsPage {
     constructor(private tabBarService: TabBarService) {}
 
     public ngAfterViewInit(): void {
-        const pagesWithTabBar: Set<string> = new Set<string>(
+        const pagesShowingTabBar: Set<string> = new Set<string>(
             TAB_PAGES.filter((page: any) => page.showTabBar)
                 .map((page: any) => page.tab));
-        this.tabBarService.init(this.tabBarRef, pagesWithTabBar);
+        this.tabBarService.init(this.tabBarRef, pagesShowingTabBar);
     }
 }

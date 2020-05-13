@@ -6,7 +6,7 @@
                     <ion-list-header>Inbox</ion-list-header>
                     <ion-note>hi@ionicframework.com</ion-note>
                     <ion-menu-toggle autoHide="false"
-                                     *ngFor="let p of appPages; let i = index">
+                                     *ngFor="let p of appPages">
                         <ion-item [routerLink]="[p.url]"
                                   routerLinkActive="selected"
                                   routerDirection="root"

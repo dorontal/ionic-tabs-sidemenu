@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { APP_PAGES } from './pages/tabs/tabs.page';
+import { APP_PAGES } from './tabs/tabs.page';
 
 @Component({
     selector: 'app-root',

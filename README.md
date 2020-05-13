@@ -86,5 +86,5 @@ of the app's pages in `tabs/tabs.page.ts` instead.
   `src/app/tabs/tab3`, or `src/app/tabs/tab4` or
   `src/app/tabs/tab5` and you'll see the tabs pages.
 * Play with the definitions in the the constant `TAB_PAGES` in
-  `tabs/tabs.page.ts` to determine which page goes in the sidemenu,
-  which goes in the tabs, and which can display the tab-bar.
+  [src/app/tabs/tabs.page.ts](src/app/tabs/tabs.page.ts) to determine which page goes in the sidemenu,
+  which goes in the tabs, and which page displays the tab-bar.

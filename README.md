@@ -52,20 +52,7 @@ of the app's pages in `tabs/tabs.page.ts` instead.
   ```
 * Edit `src/app/tabs/tabs-routing.module.ts` - add a route for 
   tab4 & tab5 identical to the tab3 route, replacing '3' with '4'
-  and '5', respectively.
-  ```html
-  ...
-    <ion-tab-button tab="tab4">
-      <ion-icon name="water"></ion-icon>
-      <ion-label>Tab 4</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="tab5">
-      <ion-icon name="heart"></ion-icon>
-      <ion-label>Tab 5</ion-label>
-    </ion-tab-button>
-  ...
-  ```
+  and '5', respectively. Change the `<ion-label>`s and icon names.
 * Test the app to see that the 5-tabs app works
   ```bash
   npm start

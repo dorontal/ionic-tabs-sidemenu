@@ -14,14 +14,15 @@ This app allows you to easily control the following in your programs, via one co
 
 Those are implemented via a service [src/app/tab-bar.service.ts](src/app/tab-bar.service.ts).
 
-In a nutshell: first create the Ionic App standard templates for both
-the tabs app and a sidemenu app. This app is based on the tabs app
-scaffold, but it takes the files `app.component.html`,
-`app.component.ts` and `app.component.scss` from the sidemenu app,
-then modifies `app.component.ts` and `tabs/tabs.page.ts` to put all
-of the app's pages in `tabs/tabs.page.ts` instead.
-
 ## Main steps taken to reproduce this app
+
+To recreate this from scratch, in a nutshell: first create the Ionic
+App standard templates for both the tabs app and a sidemenu app. This
+app is based on the tabs app scaffold, but it takes the files
+`app.component.html`, `app.component.ts` and `app.component.scss` from
+the sidemenu app, then modifies `app.component.ts` and
+`tabs/tabs.page.ts` to put all of the app's pages in
+`tabs/tabs.page.ts` instead.
 
 * Start a new **tabs** Ionic Angular project
   ```bash

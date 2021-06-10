@@ -18,7 +18,7 @@ of the app's pages in `tabs/tabs.page.ts` instead.
 
 * Start a new **tabs** Ionic Angular project
   ```bash
-  ionic start --type=angular
+  ionic start ionic-tabs-sidemenu tabs --type=angular
   ```
   For project name choose `ionic-tabs-sidemenu`. Choose a tabs
   project. Select the defaults from that point on.
@@ -44,7 +44,7 @@ of the app's pages in `tabs/tabs.page.ts` instead.
   perl -pi -e 's/tab1/tab5/g' *
   perl -pi -e 's/Tab 1/Tab 5/g' *
   mv tab1.module.ts tab5.module.ts
-  mv tab1.page.html tab5.page.html
+  mv tab1.page.html tab5p.age.html
   mv tab1.page.scss tab5.page.scss
   mv tab1.page.spec.ts tab5.page.spec.ts
   mv tab1.page.ts tab5.page.ts
@@ -52,10 +52,10 @@ of the app's pages in `tabs/tabs.page.ts` instead.
   ```
 * Edit `src/app/tabs/tabs-routing.module.ts` - add a route for 
   tab4 & tab5 identical to the tab3 route, replacing '3' with '4'
-  and '5', respectively. Change the `<ion-label>`s and icon names.
-* Test the app to see that the 5-tabs app works
+  and '5', respectively.
+* Test that the app compiles at this stage, it should.
   ```bash
-  npm start
+  yarn start
   ```
 * Copy over the following file modifications from their new
   versions in this repository overwriting the tabs app default
@@ -67,11 +67,20 @@ of the app's pages in `tabs/tabs.page.ts` instead.
   src/app/app.component.html
   src/app/app.component.ts
   src/app/app.component.scss
-* To test, you see that only `Tab 1` and `Tab 2` pages show up
-  in the sidemenu. To go to any of the tabs pages either use
-  `router.navigate(...)` in the code, or go to the url
-  `src/app/tabs/tab3`, or `src/app/tabs/tab4` or
-  `src/app/tabs/tab5` and you'll see the tabs pages.
+  src/app/tab1/tab1.page.html 
+  src/app/tab2/tab2.page.html 
+  src/app/tab3/tab3.page.html 
+  src/app/tab4/tab4.page.html 
+  src/app/tab5/tab5.page.html 
+* Run the app. To test functionality, check that only `Tab 1` and `Tab
+  2` pages show up in the sidemenu. To go to any of the tabs pages
+  either use `router.navigate(...)` in the code, or go to the url
+  `src/app/tabs/tab3`, or `src/app/tabs/tab4` or `src/app/tabs/tab5`
+  and you'll see the tabs pages.
 * Play with the definitions in the the constant `TAB_PAGES` in
-  [src/app/tabs/tabs.page.ts](src/app/tabs/tabs.page.ts) to determine which page goes in the sidemenu,
-  which goes in the tabs, and which page displays the tab-bar.
+  [src/app/tabs/tabs.page.ts](src/app/tabs/tabs.page.ts) to determine
+  which page goes in the sidemenu, which one goes in the tabs, and which
+  page displays the tab-bar.
+
+
+Yes, it may seem like a weird up but that was done on purpose - every tab you click on my surprise you - that's because it is meant to show the different ways of wiring those up.

@@ -1,11 +1,18 @@
 # ionic-tabs-sidemenu
 Ionic skeleton app with both tabs and sidemenu.
 
+This is meant only as an example. It is an app for developers to look at the code.
+
 This app can:
 * Hide or show the tab-bar for any of its  pages
 * Include or omit any of its pages in the side menu, or in the tab-bar
 
-Those things are done via the service [src/app/tab-bar.service.ts](src/app/tab-bar.service.ts).
+This app allows you to easily control the following in your programs, via one constant definition (see`TAB_PAGES` in [src/app/tabs/tabs.page.ts](src/app/tabs/tabs.page.ts):
+  1) Whether any page should appear in the tab-bar
+  2) Whether any page should appear in the side menu
+  3) Which page should show the tab-bar (you can turn it off for some pages)
+
+Those are implemented via a service [src/app/tab-bar.service.ts](src/app/tab-bar.service.ts).
 
 In a nutshell: first create the Ionic App standard templates for both
 the tabs app and a sidemenu app. This app is based on the tabs app

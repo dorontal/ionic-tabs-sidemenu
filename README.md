@@ -89,6 +89,3 @@ the sidemenu app, then modifies `app.component.ts` and
   [src/app/tabs/tabs.page.ts](src/app/tabs/tabs.page.ts) to determine
   which page goes in the sidemenu, which one goes in the tabs, and which
   page displays the tab-bar.
-
-
-Yes, it may seem like a weird app but that was done on purpose - every tab you click on my surprise you - that's because it is meant to show the different ways of wiring those up.

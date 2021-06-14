@@ -16,6 +16,13 @@ Those are implemented via a service [src/app/tab-bar.service.ts](src/app/tab-bar
 
 ## Main steps taken to reproduce this app
 
+Of course you do not need to recreate this app from scratch. All you
+need to do is clone this repository and you can use the code. The 
+instructions below are only here for illustration / educational
+purposes, if anyone wants to gain a better understanding of the changes
+that were made to the standard scaffolded app that resulted in creating 
+this one.
+
 To recreate this from scratch, in a nutshell: first create the Ionic
 App standard templates for both the tabs app and a sidemenu app. This
 app is based on the tabs app scaffold, but it takes the files

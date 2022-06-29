@@ -3,6 +3,9 @@ Ionic skeleton app with both tabs and sidemenu.
 
 This is meant only as an example. It is an app for developers to look at the code.
 
+#### Demo walkthrough
+To go through the demo, run this app by running `yarn start` then going to `localhost:4200` in your browser, you can go go through all tabs -- and therefore see all features of the code demonstrated by this app -- if you select the tabs in the order: 1 to 5.
+
 This app can:
 * Hide or show the tab-bar for any of its  pages
 * Include or omit any of its pages in the side menu, or in the tab-bar

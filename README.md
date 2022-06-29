@@ -1,10 +1,23 @@
 # ionic-tabs-sidemenu
+
+**Page-by-page-configurable way of using sidemenu
+and tabs simultaneously**
+
 Ionic skeleton app with both tabs and sidemenu.
 
-This is meant only as an example. It is an app for developers to look at the code.
+This app is only a simplified example, meant to showcase the code.
+
+The code is here for developers to use to accomplish the features
+demonstrated by the app.
 
 #### Demo walkthrough
-To go through the demo, run this app by running `yarn start` then going to `localhost:4200` in your browser, you can go go through all tabs -- and therefore see all features of the code demonstrated by this app -- if you select the tabs in the order: 1 to 5.
+To go through the demo
+* Run `yarn install` from the shell to install packages
+* Run `yarn start` from the shell to start a local server
+* Go to `localhost:4200` in your browser
+
+You can see all features of the code demonstrated by the app if you go through
+the tabs in the order 1 to 5.
 
 This app can:
 * Hide or show the tab-bar for any of its  pages

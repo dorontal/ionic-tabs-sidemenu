@@ -30,6 +30,7 @@ This app allows you to easily control the following in your programs, via one co
 
 Those are implemented via a service [src/app/tab-bar.service.ts](src/app/tab-bar.service.ts).
 
+<!--
 ## Main steps taken to reproduce this app
 
 Of course you do not need to recreate this app from scratch. All you
@@ -112,3 +113,4 @@ the sidemenu app, then modifies `app.component.ts` and
   [src/app/tabs/tabs.page.ts](src/app/tabs/tabs.page.ts) to determine
   which page goes in the sidemenu, which one goes in the tabs, and which
   page displays the tab-bar.
+-->

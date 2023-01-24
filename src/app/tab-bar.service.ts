@@ -14,13 +14,6 @@ export class TabBarService {
     private tabBarTabs: Set<string>;
 
     constructor(private router: Router) {
-        /*
-        this.router.events.pipe(
-            filter((event: RouterEvent) => event instanceof NavigationEnd)
-        ).subscribe((event: RouterEvent) => {
-            this.setTabVisibility(event);
-        });
-        */
         router.events
         .pipe(filter(event => event instanceof NavigationEnd))
         .subscribe((event) => {
